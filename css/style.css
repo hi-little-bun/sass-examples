@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item {
+  flex: 100%;
+  padding: 10px;
+}
+
+.flex-item:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+
+.flex-item:nth-child(even) {
+  background-color: rgb(203, 229, 255);
+}
+
+.section-1 #section-container-1 {
+  border: 1px dashed black;
+  padding: 10px;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+.section-2 #section-container-2 {
+  border: 1px dashed black;
+  padding: 10px;
+}
+.section-2 #section-container-2 h3 {
+  color: green;
+}
+.section-2 #section-container-2 p {
+  color: red;
+}
+
+.section-3 html,
+.section-3 body,
+.section-3 ul,
+.section-3 ol {
+  margin: 10px;
+  padding: 10px;
+}
+
+.section-3 #section-container-3 {
+  border: 1px dashed black;
+  padding: 10px;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+.section-4 #section-container-4 {
+  border: 1px dashed black;
+  padding: 10px;
+}
+.section-4 #section-container-4 .danger {
+  color: red;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid blue;
+  background-color: green;
+}
+
+.section-5 #section-container-5 {
+  border: 1px dashed black;
+  padding: 10px;
+  /* Define mixin with two arguments */
+}
+.section-5 #section-container-5 .myArticle {
+  border: 1px solid blue;
+}
+.section-5 #section-container-5 .myNotes {
+  border: 2px solid red;
+}
+
+.section-6 #section-container-6 {
+  border: 1px dashed black;
+  padding: 10px;
+}
+.section-6 #section-container-6 .button-basic, .section-6 #section-container-6 .button-submit, .section-6 #section-container-6 .button-report {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+.section-6 #section-container-6 .button-report {
+  background-color: red;
+}
+.section-6 #section-container-6 .button-submit {
+  background-color: green;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */

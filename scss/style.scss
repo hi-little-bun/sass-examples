@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-item {
+    flex: 100%;
+    padding: 10px;    
+}
+
+.flex-item:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+.flex-item:nth-child(even) {
+    background-color: rgb(203, 229, 255);
+}
+
+@mixin section-container-box {
+    border: 1px dashed black;
+    padding: 10px;
+}
+
+.section-1 {
+    $myFont: Helvetica, sans-serif;
+    $myColor: red;
+    $myFontSize: 18px;
+    $myPadding: 10px;
+
+    #section-container-1 {
+        border: 1px dashed black;
+        padding: $myPadding;
+        font-family: $myFont;
+        font-size: $myFontSize;
+        color: $myColor;
+    }                
+}
+
+$section2Color: red;
+.section-2 {
+    $myPadding: 10px;
+
+    #section-container-2 {
+        border: 1px dashed black;
+        padding: $myPadding;
+
+        h3 {
+            $section2Color: green;
+            color: $section2Color;
+        }
+
+        p {
+            color: $section2Color;
+        } 
+    }                
+}
+
+@import "reset";
+.section-3 {
+    #section-container-3 {
+        @include section-container-box;
+        font-family: Helvetica, sans-serif;
+        font-size: 18px;
+        color: red;
+    }  
+}
+
+.section-4 {
+    #section-container-4 {
+        @include section-container-box;
+
+        @mixin important-text {
+            color: red;
+            font-size: 25px;
+            font-weight: bold;
+            border: 1px solid blue;
+        }
+          
+        .danger {
+            @include important-text;
+            background-color: green;
+        } 
+    }
+}
+
+.section-5 {
+    #section-container-5 {
+        @include section-container-box;
+
+        /* Define mixin with two arguments */
+        @mixin bordered($color, $width) {
+            border: $width solid $color;
+        }
+        
+        .myArticle {
+            @include bordered(blue, 1px);  // Call mixin with two values
+        }
+        
+        .myNotes {
+            @include bordered(red, 2px); // Call mixin with two values
+        } 
+    }
+}
+
+.section-6 {
+    #section-container-6 {
+        @include section-container-box;
+
+        .button-basic  {
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          
+          .button-report  {
+            @extend .button-basic;
+            background-color: red;
+          }
+          
+          .button-submit  {
+            @extend .button-basic;
+            background-color: green;
+            color: white;
+          }          
+    }
+}
+  
